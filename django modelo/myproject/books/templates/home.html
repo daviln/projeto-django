@@ -1,0 +1,28 @@
+{% load static %}
+
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'inicial/home_page.css' %}">
+</head>
+<body>
+    <h1 class="titulo">Welcome to your online Bookshelf!</h1>
+    <section>
+        <p>This is your online bookshelf. Here you can add your favorites books by clicking <b>'Add book'</b>, and see your book list by clicking <strong>'See book list'</strong>.</p>
+    </section>
+    <a href="{% url 'add_book' %}">Add Book</a>
+    <a href="{% url 'book_list' %}">See book list</a>
+    <div class="card">
+        <div class="image-box">
+            <img src="{% static 'images/book_shelf.webp' %}">
+        </div>
+   
+        <div class="content">
+            <h2>Bill Gates</h2>
+            <p>
+                My children will have computers, but they will also have books. Without books, without reading, our children will be unable to write even their own stories.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

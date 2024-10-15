@@ -1,0 +1,46 @@
+body {
+    background-image: url('/static/images/bookshelf.webp');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    filter: brightness(0.9); 
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo {
+    font-style: italic;
+    color: whitesmoke;
+    font-size: 36px;
+    padding: 60px;
+    margin-top: -50px;
+}
+
+section {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.282);
+}
+
+a {
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 50px;
+    transition: transform 0.5s ease;
+}
+
+a:hover {
+    background-color: rgb(98, 98, 112);
+    transform: scale(1.1);
+}

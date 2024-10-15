@@ -1,0 +1,43 @@
+{% load static %}
+
+<html>
+<head>
+    <title>Book List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'book/style.css' %}">
+</head>
+<body class="book-list">
+    <h1>Book List</h1>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.get_stars }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'remove_book' book.id %}">
+                                {% csrf_token %}
+                                <button type="submit">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No books available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
